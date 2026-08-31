@@ -1,19 +1,17 @@
 import pandas as pd
 import datacleaning
+import dataanalysis
+
 
 file_path = "/Users/darrento/Desktop/formularacing/can_data.csv"
 df = pd.read_csv(file_path)
 
-print(df.head())
-print("\n Dataset shape")
-print(df.shape)
-print("\n Column info")
-print(df.info())
-print("\n Missing values")
-print(df.isna().sum())
-
 clean_df = datacleaning.clean_data(df)
 
-print(f"\n Rows before cleaning: {len(df)}")
-print(f"\n Rows after cleaning: {len(clean_df)}")
-print(f"\n Missing values after cleaning: {clean_df.isna().sum().sum()}")
+rpm_tps_correlation = dataanalysis.calculate_correlation(
+    clean_df,
+    "RPM",
+    "TPS"
+)
+
+print(f"\nCorrelation between RPM and TPS: {rpm_tps_correlation:.2f}")
