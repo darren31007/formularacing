@@ -22,3 +22,4 @@ rpm_tps_correlation = dataanalysis.calculate_correlation(
 )
 print(f"\nCorrelation between RPM and TPS: {rpm_tps_correlation:.2f}")
 datavisualization.create_rpm_tps_scatter(analyzed_df)
+datavisualization.create_rpm_timeline(analyzed_df)
