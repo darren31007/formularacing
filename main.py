@@ -1,6 +1,8 @@
 import pandas as pd
+import matplotlib as plt
 import datacleaning
 import dataanalysis
+import datavisualization
 
 
 file_path = "/Users/darrento/Desktop/formularacing/can_data.csv"
@@ -13,5 +15,6 @@ rpm_tps_correlation = dataanalysis.calculate_correlation(
     "RPM",
     "TPS"
 )
-
+print(df.info)
 print(f"\nCorrelation between RPM and TPS: {rpm_tps_correlation:.2f}")
+datavisualization.create_rpm_tps_scatter(clean_df)
