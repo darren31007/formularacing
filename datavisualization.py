@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-
+#Scatter plot
 def create_rpm_tps_scatter(data):
     plt.figure(figsize=(10, 6))
 
